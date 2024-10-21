@@ -1,0 +1,136 @@
+/* Font Family */
+@import url('./_font-family.css');
+
+/* inject font-family for all Elements */
+body {
+    font-family: "vazir", sans-serif;
+    background: url("../../assets/image/bg.jpg") no-repeat fixed;
+    background-size: cover;
+}
+
+/* Switch Dark theme styles */
+
+.dark .dark-bg-body-dark {
+    background: url("../../assets/image/bg-dark.jpg") no-repeat fixed;
+    background-size: cover;
+}
+.darkmood-switch {
+    width: 2.5rem !important;
+    height: 1.5rem !important;
+    cursor: pointer;
+}
+.dark .dark-text-white {
+    color: #fff !important;
+}
+
+/* ** **   Header  ** **   */
+
+.header {
+    padding-top: 90px;
+}
+.text-gray {
+    color: #44494e !important;
+}
+/* CountDown */
+.header .countdown-timer div{
+    text-align: center;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    width: 100px;
+    padding: 15px 0;
+    margin-right: 15px;
+}
+@media screen and (max-width : 576px) {
+    .header .countdown-timer div{
+      width: 70px;
+    }
+}
+/* iTyped.js cursor */
+
+
+.ityped-cursor {
+    font-size: 2.2rem;
+    opacity: 1;
+    -webkit-animation: blink 0.3s infinite;
+    -moz-animation: blink 0.3s infinite;
+    animation: blink 0.3s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes blink {
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Social Links */
+.header .social-links a{ 
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+    margin: 0 5px;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    transition: all 0.3s;
+}
+.header .social-links a:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd !important;
+}
+/* ** ** Contact us ** **  */
+
+.contact .contact-title {
+    border-bottom: 5px solid  rgba(0, 0, 2, 0.2) !important;
+    border-bottom-width: 80px;
+    max-width: 200px;
+    padding-bottom: 15px;
+}
+.contact .card {
+    border-top: 4px solid #0d6efd;
+    border-bottom: 4px solid #0d6efd;
+    padding-top: 30px;
+    border-radius: 0.5rem;
+    background-color: rgba(255,255,255,0.06);
+    width: 100%;
+    box-shadow: 0 0 24px 0 rgba( 0 0 0 / 11%);
+}
+.contact .card i {
+    font-size: 20px;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    background-color: rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+.contact .card i:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: #ffffff;
+}
+.contact .card #mapid {
+    height: 325px;
+}
+/* Default Classes and Utilities for elements */
+.lh-0 {
+    line-height: 0;
+}

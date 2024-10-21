@@ -1,0 +1,236 @@
+<!doctype html>
+<html x-data="darkMode" lang="fa" dir="rtl" :class="{ 'dark' : darkMode }">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Coming Soon...</title>
+  <!-- Bootstrap Css -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.rtl.min.css">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <!--Leaflet Css File -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+  <!--Leaflet Js File -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+          crossorigin=""></script>
+  <!-- Main Css File -->
+  <link rel="stylesheet" href="./css/main.css">
+
+</head>
+<body class="dark-bg-body-dark">
+
+
+  <!-- ** **  Switch Dark mood button  ** ** -->
+  <div class="d-flex align-items-center justify-content-end p-4">
+    <!-- sun icon -->
+    <i class="bi bi bi-brightness-high-fill fs-4 me-2 lh-0 dark-text-white"></i>
+    <!-- switch btn -->
+    <div class="form-check form-switch">
+      <input x-model="darkMode" class="form-check-input darkmood-switch" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+    </div>
+    <!-- moon icon -->
+    <i class="bi bi-moon-stars-fill fs-5 ms-2 lh-0 dark-text-white"></i>
+  </div>
+  <!-- ** **  ENd Switch Dark mood button  ** ** -->
+
+
+  <!-- ** ** Header ** ** -->
+  <header class="header text-gray dark-text-white justify-content-center">
+    <div class="container">
+      <!-- ** ** First Cell Section ** ** -->
+      <div class="row text-center">
+        <div>
+          <h2 class="fw-bold mb-4">
+            <span class="text-primary">افتتاحیه پلتفرم</span>
+            <span id="sentence-typed"></span>
+          </h2>
+          <p class="lh-lg">پلتفرم رونمایی از آخرین هوش مصنوعی سلول های بنیادی بیولوژیکی</p>
+        </div>
+      </div>
+      <!-- ** ** END First Cell Section ** ** -->
+
+
+      <!-- ** **  Second Cell Section ** ** -->
+      <div x-data="countdown" class="row justify-content-center countdown-timer">
+        <!-- Day -->
+        <div>
+          <h3 class="fw-bold" x-text="days"></h3>
+          <h5>روز</h5>
+        </div>
+        <!-- Hour -->
+        <div>
+          <h3 class="fw-bold" x-text="hours"></h3>
+          <h5>ساعت</h5>
+        </div>
+        <!-- Minutes -->
+        <div>
+          <h3 class="fw-bold" x-text="minutes"></h3>
+          <h5>دقیقه</h5>
+        </div>
+        <!-- Seconds -->
+        <div>
+          <h3 class="fw-bold" x-text="seconds"></h3>
+          <h5>ثانیه</h5>
+        </div>
+      </div>
+      <!-- ** ** End  Second Cell Section ** ** -->
+
+
+
+
+      <!-- ** **  Join Our Community ** ** -->
+      <div class="row justify-content-center text-center my-5">
+        <div class="col-12">
+          <h6 class="mb-4">به جامعه ما ملحق شوید تا در کنار هم پیشرفت کنیم</h6>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="input-group mb-3">
+            <input type="email" class="form-control" name="user-email" id="user-email">
+            <button class="btn btn-primary" type="button">عضویت</button>
+          </div>
+        </div>
+        <div class="col-12 social-links mt-5">
+          <a href="#"><i class="lh-0 bi bi-twitter-x"></i></a>
+          <a href="#"><i class="lh-0 bi bi-telegram"></i></a>
+          <a href="#"><i class="lh-0 bi bi-reddit"></i></a>
+          <a href="#"><i class="lh-0 bi bi-discord"></i></a>
+        </div>
+      </div>
+      <!-- ** ** End Join Our Community ** ** -->
+
+      
+
+
+    </div>
+  </header>
+
+
+  <!-- ** ** Contact US ** ** -->
+  <section class="contact">
+    <div class="container my-5">
+      <div class="row text-center justify-content-center mb-5 gy-4">
+        <h2 class="fw-bold contact-title">ارتباط با ما</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-5">
+          <div class="card">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-geo-alt mx-3"></i>
+              <div>
+                <h5 class="fw-bold mb-0">آدرس :</h5>
+                <p class="mb-0">استان گلستان، گرگان</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center my-4">
+              <i class="bi bi-envelope mx-3"></i>
+              <div>
+                <h5 class="fw-bold mb-0">ایمیل :</h5>
+                <p class="mb-0">Cenaqasemi@gmail.com</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-phone mx-3"></i>
+              <div>
+                <h5 class="fw-bold mb-0">شماره تماس</h5>
+                <p class="mb-0">09109931989</p>
+              </div>
+            </div>
+            <!--Map-->
+            <div id="mapid"></div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <form action="#" class="card h-100">
+            <div class="container">
+              <div class="row gy-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold" for="user-name">نام : </label>
+                  <input class="form-control" type="text" name="user-name" id="user-name">
+                </div>
+                <div class="col-md-6">
+                  <label class="fw-bold form-label" for="user-email-b">ایمیل :</label>
+                  <input class="form-control " type="email" name="user-email" id="user-email-b">
+                </div>
+              </div>
+              <div class="col-md-12 mt-3">
+                <label class="form-label fw-bold" for="user-subject">موضوع : </label>
+                <input class="form-control" type="text" name="user-name" id="user-subject">
+              </div>
+              <div class="col-md-12 mt-3">
+                <label for="user-msg" class="form-label fw-bold">متن پیام :</label>
+                <textarea class="form-control" name="user-msg" id="user-msg" rows="10" required ></textarea>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-outline-primary mt-3 text-white border-3">ارسال پیام</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ** ** End Contact US ** ** -->
+  <!-- Bootstrap Bundle JS -->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- iTyped JS File -->
+  <script src="../node_modules/ityped/dist/index.min.js"></script>
+  <script>
+    const sentenceElement = document.querySelector('#sentence-typed');
+    ityped.init(sentenceElement, { showCursor: true, strings: [ 'هوش مصنوعی سبز به زودی...' ] });
+  </script>
+  <!--Alpine JS-->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.8/dist/cdn.min.js"></script>
+  <script>
+    document.addEventListener('alpine:init', () => {
+  Alpine.data('darkMode', () => ({
+      darkMode: false,
+      init() {
+          this.darkMode = localStorage.theme === 'dark' ? true : false
+
+          this.$watch('darkMode', (value) => {
+              localStorage.theme = value ? 'dark' : 'light';
+          });
+      }
+  }));
+  Alpine.data('countdown', () => ({
+      days : '00',
+      hours : '00',
+      minutes : '00',
+      seconds : '00',
+      init(){
+        let endDate = new Date(2024, 10, 21).getTime();
+        // console.log(endDate);
+        setInterval(() => {
+          let currentDate = new Date().getTime();
+          let finalDate = endDate - currentDate;
+          if(finalDate >= 0) {
+            this.days = this.format(Math.floor(finalDate / (1000 * 60 * 60 * 24 )));
+            this.hours = this.format(Math.floor((finalDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)));
+            this.minutes = this.format(Math.floor((finalDate % (1000 * 60 * 60)) / (1000 * 60)));
+            this.seconds = this.format(Math.floor((finalDate % (1000 * 60 )) / 1000));
+          }
+        }, 1000);
+      },
+      format(num) {
+          return num < 10 ? '0' + num : num ;
+      }
+  }));
+});
+  //   Load Map
+    let map = L.map('mapid').setView([365020.8, 542223.3], 13);
+    L.tileLayer( 'https://tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=562fcd3bd0124a4da55916ef88fdcf24\n', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+  //   Add Marker to map
+    L.marker([365020.8, 542223.3]).addTo(map)
+        .bindPopup('من اینجام...!')
+        .openPopup();
+  </script>
+  <!--Main JS File-->
+</body>
+</html> 
